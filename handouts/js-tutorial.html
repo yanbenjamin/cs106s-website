@@ -1,0 +1,692 @@
+<!-- 
+Webpage for CS 106S (Coding for Social Good seminar), Week 1
+Tutorial on the JavaScript language!
+-->
+
+<!doctype html>
+<html>
+    <head>
+
+        <style>
+            
+        body, td, th  {
+            font-size: 120%;
+            font-family: "Times New Roman",Times,serif;
+            margin-left: 15px;
+        }
+
+        pre {
+            font-family: courier, monospace;
+            font-size: large;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 1em;
+            max-width: 580px;
+            white-space: pre-wrap;
+        }
+
+        .keybutton{
+            border-radius: 5px;
+            background-color: rgb(144, 238, 144);
+        }
+
+        .js{
+            font-family: courier, monospace;
+        }
+
+        .keyword{
+            font-family: courier, monospace;
+            color: blue;
+        }
+
+        .comment{
+            color: green;
+        }
+
+        </style>
+
+    </head>
+    <body>
+        <h1 style = "margin-bottom: 10px">🌐 CS 106S: JavaScript Guide</h1>
+        <p style = "margin-top: 10px">Ben Yan, Winter 2025 <em>(webpage structure inspired by Nick Parlante's handouts)</em></p>
+
+        <div style = "margin-top: 10px; width: 600px">
+            <p>Hi there and welcome to JavaScript Land! The first class is mostly going over the syllabus and logistical stuff (and trying to figure out how we ended up all the way in McMurtry), but we're also being introduced to the beautiful, funky language which is JavaScript. We have an exercise with Caesar ciphers to get some practice and acrobatics with the language. Fun stuff ahead!</p>
+
+            <p>This JavaScript guide is a more fleshed-out or  lectures-notes-style version of the JavaScript code tutorial at <a href = "https://github.com/yanbenjamin/cs106s-w1/blob/main/tut.js">this link</a>. It assumes some prior experience with general programming concepts (e.g., if and else, for loops, strings and arrays), at the level of a student entering CS 106B. But don't worry if otherwise (e.g., it's been a very hot minute since AP CSA); you can look through this reference guide at your own pace! Please feel free to ask me any questions, or for any clarifications during the workshop time, and I'll head over to chat :)
+            </p>
+
+        <p><b>You're also welcome and encouraged to work through this in groups!</b></p>
+
+        </div>
+
+        <h2 style = "margin-bottom: 10px">Running JavaScript in Browser</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+             <p style = "margin-top: 10px; margin-left: 5px">From the <a href = "https://github.com/yanbenjamin/cs106s-w1/">starter code</a> folder you downloaded, open the <b>index.html</b> file in Google Chrome (on MacOS Finder, double-clicking the file typically works). 
+
+            <p style = "margin-left: 5px">Then, press <span class=keybutton>cmd</span>-<span class=keybutton>option</span>-<span class=keybutton> j </span> (or <span class=keybutton>ctrl</span>-<span class=keybutton>shift</span>-<span class=keybutton> j </span> if on windows), not letting go of the previous key while pressing the next. A console should pop up, where you can type and run JavaScript code! Alternatively, if you're familiar with the <b>Inspect Element</b> tool, possibly due to mischief, you can head there; there should be an upper panel of tabs that reads <b>Elements, Console, Sources, etc.</b>. You'll want to click on <b>Console</b>.</p>
+
+            <center>
+            <img src = "js-console.png" style="height: 150px; border-style: ridge; border-width: 3px">
+            </center>
+
+             <p style = "margin-left: 5px">I'd recommend split-screening so that you have the tutorial on one side, and <b>index.html</b> with the console open on the other side. That way, you can copy and tinker with any code here, and run it in the console to verify its output.</p>
+
+        </div>
+
+
+        <h2 style = "margin-bottom: 10px">JavaScript Kick-off</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+            <p style = "margin-top: 10px; margin-left: 5px">Here's a simple Hello World program in JavaScript! </p>
+
+            <pre>
+console.log("Hello World!");
+            </pre>
+
+             <p style = "margin-top: 0px; margin-left: 5px">JavaScript comments begin with a <b style = "font-family: courier, monospace">//</b>, and while they're not executed as lines of actual code, they can help explain code and improve readability.</p>
+
+            <pre>
+console.log("Hi there, my name is Ben!");
+<span style = "color: green">// introducing myself to the computer, in a
+// friendly way in case they take over the world</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-left: 5px">Note that math (<b style = "font-family: courier, monospace">+,-,*,/</b> operators) works similarly to a language like Python. JavaScript represents all numbers as a unified <b>Number</b> type, so <b style = "font-family: courier, monospace">/</b> between two integer values will perform regular, arithmetic division.
+            <pre>
+1 + 1; <span style = "color: green">// => 2</span>
+10 - 4; <span style = "color: green">// => 6</span>
+2 * 7; <span style = "color: green">// => 14</span>
+3 / 2; <span style = "color: green">// => 1.5</span>
+            </pre>
+
+ 
+            <p style = "margin-top: 0px; margin-left: 5px">The <b style = "font-family: courier, monospace">%</b> is the remainder operator i.e. the expression <b style = "font-family: courier, monospace">n % k</b> evaluates to the remainder when <b>n</b> is divided by <b>k</b>.</p>
+
+            <pre>
+4 % 2; <span style = "color: green">// => 0</span>
+5 % 2; <span style = "color: green">// => 1</span>
+6 % 2; <span style = "color: green">// => 0</span>
+10 % 26; <span style = "color: green">// => 10</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-left: 5px"> Remainders can be useful for capturing alternating or "wrap-around" behavior in programs, e.g., time-keeping on clocks 🕰️. If it's 8:00 right now, then 7 hours later, it'll be 3:00, as times wrap around the 12-hour clock. This could have been computed with the following JavaScript expression:
+            </p>
+
+            <pre>
+(8 + 7) % 12 <span style = "color: green">// 8+7 => 15 o'clock 🤔</span>
+<span style = "color: green">// clock only has 12 hours (0-11), so 15%12 => 3:00</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-left: 5px">Lastly, in JavaScript, having a semicolon (;) at the end of each statement is optional! Up to you and your style preferences :)</p>
+
+        </div>
+
+        <h2 style = "margin-bottom: 10px">Variables</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">We use the <b style="font-family: courier, monospace; color: blue">let</b> keyword to define variables <b>of any type</b> (whether Number, String, Array, etc.). The syntax in JavaScript takes the form: </p>
+
+            <pre>
+<b><span style = "color: blue">let</span> variableName = expression;</b>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">In the statement above, <b><span style = "font-family: courier, monospace">=</span> is the assignment operator</b>, and it assigns a value on the right side to the variable on the left side. It can also <b>re-assign</b> a new value to an existing variable! Some examples are shown below:</p>
+
+            <pre>
+let numClasses = 4;
+numClasses = 5; <span style = "color: green">// modifies value to 5</span>
+numClasses = numClasses - 2; <span style = "color: green">// decreases to 5-2=>3</span>
+
+let totalUnits = 12;
+let avgUnitsPerClass = totalUnits / numClasses;
+<span style = "color: green">// the above variable equals 12 / 3 => 4</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">We also have the <b>addition assignment (<span style = "font-family: courier, monospace">+=</span>)</b> operator, which is pretty neat way to add a value to an existing variable.</p>
+
+            <pre>
+numClasses += 1; <span style = "color: green">// now back equal to 4</span>
+<span style = "color: green">// same as numClasses = numClasses + 1, but shorter</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">For variables with fixed values, we can elect to use <b style = "color: blue; font-family: courier, monospace">const</b> instead.</p>
+
+            <pre>
+const CS106S_UNITS = 1; <span style = "color: green">// 1-unit wonder!</span>
+const LITERS_IN_A_GALLON = 3.785;
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">In older JavaScript code, you may encounter the keyword <b style = "color: blue; font-family: courier, monospace">var</b> in the place of <b style = "color: blue; font-family: courier, monospace">let</b> for declaring variables. <b>As a general principle, avoid using it</b>; there's a subtle difference with variable scoping and accessibility (see <a href = "https://sentry.io/answers/difference-between-let-and-var-in-javascript/" style = "text-decoration: none">here</a> if you're curious). </p>
+
+        </div>
+            
+  
+        <h2 style = "margin-bottom: 10px">Functions</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">The general structure for defining a function in JavaScript is </p>
+            <pre>
+<b style = "color:blue">function</b> functionName(<em>list of input parameters</em>){
+   <em>list of statements in function body</em>
+}
+            </pre>
+
+            <p style = "margin-left: 5px; margin-top: 0px; margin-bottom: 20px">You can optionally return a single value (of any type), with a statement of form <b style="font-family:courier, monospace"><span style = "color: blue">return</span> expression;</b>
+
+            
+            To see this in action, consider the following function which simply adds two numbers together and gives back the result.</p>
+
+            <pre>
+<b style = "color:blue">function</b> addTwoNumbers(x,y){
+   let sum = x + y;
+   return sum;
+}
+            </pre>
+
+            <p style = "margin-left: 5px; margin-top: 0px; margin-bottom: 20px">To call or invoke a function in JavaScript, you supply the function name, and pass in values for each input parameter, e.g.,</p>
+
+            <pre>
+let sum1 = addTwoNumbers(3,4); <span class=comment>// => 7</span>
+let sum2 = addTwoNumbers(-1, Math.PI); <span class=comment>//=> 2.1415...</span>
+
+/<span class=comment>/ can also compose function calls</span>
+let sum3 = addTwoNumbers(<span style="color: red">addTwoNumbers(1,2)</span>, 3)
+<span class=comment>// => addTwoNumbers(<span style = "color: red">3</span>,3) => 6</span>
+            </pre>
+
+            <p style = "margin-left: 5px; margin-top: 0px; margin-bottom: 20px">As another example, here's a function that converts 🌡️ Celius to Fahrenheit temperatures:</p>
+            <pre>
+function celsiusToFahrenheit(celsius){
+    return 9/5 * celsius + 32;
+}
+
+let TokyoC = 10; 
+let TokyoF = celsiusToFahrenheit(TokyoC);
+console.log("Tokyo: ",TokyoC,"°C, ",TokyoF,"°F");
+<span class=comment>// => Tokyo: 10°C, 50°F</span>
+            </pre>
+
+        </div>
+
+        <h2 style = "margin-bottom: 10px">Conditional Logic</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">The comparison operators <b class=js>===</b> and <b class=js>!==</b> check for equality and non-equality conditions, respectively (note <b>three equal signs</b> instead of two). The other operators <b class=js><,<=,>=,></b> behave as mathematically expected.</p>
+
+            <pre>
+3 === 3 <span class=comment>// => true</span>
+3 < Math.PI <span class=comment>// => true</span>
+0.999 === 1 <span class=comment>// => false</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">JavaScript also has <span class=keyword>if </span>, <span class=keyword>else if </span>, and <span class=keyword>else </span> conditional statements, for a program to behave differently under varying conditions. To see these in action, consider a 🐻 <b class=js>Goldilocks</b> function that takes, as input, the temperature outside, and judges it.
+            </p>
+
+            <pre>
+function Goldilocks(fahrenheit){
+    if (fahrenheit < 32){
+        console.log("It's too cold outside!");
+    }
+    <span class=comment>//checks this only when if condition above fails</span>
+    else if (fahrenheit > 90){
+        console.log("It's too warm outside!");
+    }
+    <span class=comment>//only when both conditions above fail</span>
+    else{
+        console.log("The weather is just right.");
+    }
+}
+            </pre>
+
+            <p style = "margin-left: 5px; margin-top: 0px; margin-bottom: 10px">Note this function will log that it's "just right" only when <b class=js>fahrenheit</b> is between 32 and 90, i.e. it's at least 32 degrees AND it's at most 90 degrees. Now say, instead, we want a function that returns the boolean <b class=keyword>true</b> if the temperature is "just right", and <b class=keyword>false</b> if it's too hot or too cold.</p>
+
+            <p style = "margin-left: 5px; margin-top: 0px">For this, in JavaScript, we can leverage the <b class=js>&&</b> operator for logical AND (with the <b class=js>||</b> operator being logical OR, and <b class=js>!</b> for logical NOT).</p>
+
+            <pre>
+function isGoldilocks(fahrenheit){
+    return fahrenheit >= 32 && fahrenheit <= 90;
+    <span class=comment>// returns true or false, depending on</span>
+    <span class=comment>// if the above temperature condition is met</span>
+}
+
+<span class=comment>// opposite: weather too cold OR too hot</span>
+function isNotGoldilocks(fahrenheit){
+    return fahrenheit < 32 || fahrenheit > 90;
+}
+
+<span class=comment>// alternative to above, uses logical NOT</span>
+function isNotGoldilocks(fahrenheit){
+    return !isGoldilocks(fahrenheit);
+}
+            </pre>
+
+        
+        </div>
+
+
+        <h2 style = "margin-bottom: 10px">Strings</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">Strings are an ordered collection of characters, enclosed by quotation marks. 
+            </p>
+
+            <pre>
+let film = "wizard of oz";
+let home = "Kansas";
+let s = "";  
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 10px; margin-left: 5px">You can obtain the number of characters by checking the <b class=js>length</b> property, i.e. <b class=js>str.length</b>. Also, character positions in a string are identified by an index, which begins with <b class=js>0</b>, not 1, and extends up to <b class=js>str.length - 1</b>.
+            </p>
+
+            <table width=100%>
+                <tr style = "text-align: center; background-color: lavender">
+                    <td style="width:8.3%">w</td>
+                    <td style="width:8.3%">i</td>
+                    <td style="width:8.3%">z</td>
+                    <td style="width:8.3%">a</td>
+                    <td style="width:8.3%">r</td>
+                    <td style="width:8.3%">d</td>
+                    <td style="width:8.3%"> </td>
+                    <td style="width:8.3%">o</td>
+                    <td style="width:8.3%">f</td>
+                    <td style="width:8.3%"> </td>
+                    <td style="width:8.3%">o</td>
+                    <td style="width:8.3%">z</td>
+                </tr>
+                <tr style = "text-align: center">
+                    <td style="width:8.3%">0</td>
+                    <td style="width:8.3%">1</td>
+                    <td style="width:8.3%">2</td>
+                    <td style="width:8.3%">3</td>
+                    <td style="width:8.3%">4</td>
+                    <td style="width:8.3%">5</td>
+                    <td style="width:8.3%">6</td>
+                    <td style="width:8.3%">7</td>
+                    <td style="width:8.3%">8</td>
+                    <td style="width:8.3%">9</td>
+                    <td style="width:8.3%">10</td>
+                    <td style="width:8.3%">11</td>
+
+                </tr>
+            </table>
+
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">You can select an individual character via its index by calling <b class=js>name.charAt(<em>index</em>)</b>, or simply <b class=js>name[<em>index</em>]</b> with the square brackets notation.
+            </p>
+
+            <pre>
+film[0] <span class=comment>// => "w"</span>
+film.charAt(1) <span class=comment>// => "i"</span>
+film.charAt(6) <span class=comment>// => " " (space char)</span>
+film[film.length - 1] <span class=comment>// => "z" (last char)</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">The <b class=js>+</b> operator allows us to <b>concatenate</b> strings, a swanky word for combining strings end-to-end with no intervening characters.
+            </p>
+
+            <pre>
+"Dorothly" + " Gale"; <span class=comment>// => "Dorothy Gale"</span>
+“m” + “o” + “v” + “i” + “e”; <span class=comment>// => "movie"</span>
+            </pre>
+
+
+
+
+        </div>
+
+        <h2 style = "margin-bottom: 10px">Objects</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">JavaScript objects are akin to Python dictionaries i.e. key-value pairs enclosed in curly braces. Keys are unique strings; values are not necessarily unique, and can be of any data type. As some examples,
+
+            <pre>
+let SUNET = { 
+    "bbyan": "Benjamin Bin Yan",
+    "poohbear": "Jerry Cain",
+    ...
+};
+
+<span class=comment>from last time I checked ExploreCourses this winter</span>
+let numStudents = {
+    "cs103": 216, 
+    "cs106A": 500,
+    "cs106B": 439,
+    "cs107": 252,
+};
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">We access or <b>lookup values by their keys!</b> To do this, we can use the square bracket notation, e.g., </p>
+
+            <pre>
+numStudents["cs106a"] <span class=comment>// => 500</span>
+
+<span class=comment>// can also set new key-value pairs!</span>
+numStudents["cs109"] = 283;
+numStudents["cs111"] = 320;
+
+<span class=comment>// and modify the value for an existing key</span>
+numStudents["cs103"] += 50; <span class=comment>// new students! </span>
+            </pre>
+            
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">If the key is hard-coded in our program (e.g., doesn't change based on an input parameter), we can also use the syntax <b class=js>objectname.keyName</b>, e.g., </p>
+
+            <pre>
+numStudents.cs107 <span class=comment>// => 252</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">We can check if a key already exists in an object, using an expression of the form <b class=js>keyName </b> <b class=keyword> in </b> <b class=js>objectName</b>. Say we want a function <b class=js>getStudents</b> (assume it already has access to the <b class=js>numStudents</b> object) which takes a CS course as input, and returns its enrollment if the course exists in the object data, and <b class=js>0</b> otherwise. We can write:</p>
+            
+            <pre>
+function getStudents(course){
+    if (course in numStudents){
+        return numStudents[course];
+    }
+    <span class=comment>// this doesn't run if return already occurred</span>
+    <span class=comment>// above, as return exits out of function</span>
+    return 0;
+}
+
+getStudents("cs109") <span class=comment>// => 283</span>
+getStudents("cs1000000") <span class=comment>// => 0 (😱😱)</span>
+            </pre>
+
+
+
+
+
+
+        </div>
+
+        <h2 style = "margin-bottom: 10px">Checkpoint #1</h2> 
+        <p style = "margin-left: 5px; margin-bottom: 10px; width: 600px">Complete the function <b class=js>letterToIndex</b> in <b class="js keybutton">assignment.js</b>. As a tip, make use of the <b class=js>mapping</b> object it's already been granted access to, and recall how to use keys to lookup values within a JavaScript object. </p>
+
+        <p style = "margin-left: 5px; margin-top: 10px; width: 600px">To get an overall sense for how the Caesar cipher works, you can see the <a href = "https://github.com/yanbenjamin/cs106s-w1/tree/main?tab=readme-ov-file#caesar-ciphers-assignmentjs">README documentation here</a>.</p>
+
+        <h2 style = "margin-bottom: 10px">Arrays</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+            <p style = "margin-top: 10px; margin-bottom: 10px; margin-left: 5px">Arrays are an ordered collection of elements of any type, with indices starting at <b class=js>0</b> and ending at <b class=js>arr.length - 1</b>, akin to strings.</p>
+
+            <table width=100%>
+                <tr style = "text-align: center; background-color: lavender">
+                    <td style="width:8.3%">"cs106b"</td>
+                    <td style="width:8.3%">"math52"</td>
+                    <td style="width:8.3%">"english9ce"</td>
+                </tr>
+                <tr style = "text-align: center">
+                    <td style="width:8.3%">0</td>
+                    <td style="width:8.3%">1</td>
+                    <td style="width:8.3%">2</td>
+                </tr>
+            </table>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">We use the square brackets notation to lookup elements via their indices,</p>
+
+            <pre>
+let myCourses = ["cs106b","math52","english9ce"];
+
+myCourses[0] <span class=comment>// => "cs106b"</span>
+myCourses[1] <span class=comment>// => "math52"</span>
+<span class=comment>//be careful not to write .length()!</span>
+myCourses.length <span class=comment>// => 3</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">Arrays are mutable and of variable length, meaning that you can add, remove, or change elements within it. The <b class=js>.push()</b> method adds elements to the back of an array, and <b class=js>.pop()</b> removes the element at the back and returns it.</p>
+
+            <pre>
+myCourses.push("college102");
+console.log(myCourses);
+<span class=comment>// => ["cs106b","math52","english9ce",<span style = "color: red">"college102"</span>];</span>
+
+myCourses[1] = "math53"; <span class=comment>// different math class!</span>
+console.log(myCourses);
+<span class=comment>// => ["cs106b",<span style = "color: red">"math53"</span>,"english9ce","college102"]</span>
+
+<span class=comment>//dropping college (the course, not Stanford itself)</span>
+let droppedCourse = myClasses.pop(); <span class=comment>//=>"college102"</span>
+console.log(myCourses);
+<span class=comment>// => ["cs106b","math53","english9ce"]</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">We can use <b class=js>.slice(<em>start</em>,<em>end</em>)</b> to take a subarray or contiguous section of an array, beginning at index <b class=js>start</b> and ending one shy of <b class=js>end</b>.</p>
+
+            <pre>
+let perfectNums = [6, 28, 496, 8128, 33550336];
+perfectNums.slice(0,2) <span class=comment>// => [6, 28]</span>
+perfectNums.slice(1,4) <span class=comment>// => [28, 496, 8128]</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">We can also concatenate elements of an array into a single, unified string using the <b class=js>.join()</b> method.</p>
+
+            <pre>
+let wordFragments = ["all", "is", "well"];
+wordFragments.join(" ") <span class=comment>// => "all is well"</span>
+wordFragments.join(",") <span class=comment>// => "all,is,well"</span>
+            </pre>
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">Lastly, we can declare an empty array with <b class=js>[]</b>, e.g., <b class=js>let arr = [];</b>.</p>
+
+
+
+        </div>
+
+        <h2 style = "margin-bottom: 10px">Checkpoint #2</h2> 
+        <p style = "margin-left: 5px; width: 600px">Complete the function <b class=js>indexToLetter</b> in <b class="js keybutton">assignment.js</b> As a tip, make use of the <b class=js>alphabet</b> array, and recall how to access elements in an array via their indices. And as a tip for handling the wrap-around for indices 26 and greater, look at the remainder operator and clock example above (<b>JavaScript Kick-Off</b> section).</p>
+
+        <h2 style = "margin-bottom: 10px">Checkpoint #3</h2> 
+        <p style = "margin-left: 5px; width: 600px">Complete the function <b class=js>shiftLetter</b> in <b class="js keybutton">assignment.js</b>. Tip: make use of the helper functions you've written for previous checkpoints! </p>
+
+
+        <h2 style = "margin-bottom: 10px">For Loops</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">For loops—awesome for repeatedly executing a block of code! It'll do so a fixed number of times / iterations. The syntax in JavaScript is more similar to C++/Java than to Python, e.g.,  
+            </p>
+
+            <pre>
+function sayHelloWorld(numTimes){
+    for (let i = 0; i < N; i++){
+        console.log("Hello World!");
+        <span class=comment>// each time this runs, the counter i is
+        // incremented by 1, starting from i = 0
+        // loop ends when i = N i.e. after N runs</span>
+    }
+}
+            </pre>
+
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">Note that each iteration features a different value of <b class=js>i</b>, the loop counter variable, which we can leverage to loop over the indices of an array or string, or more broadly sequences of integers.</p>
+
+            <pre>
+<span class=comment>// computes n!, the product 1 * 2 * 3 * ... * n</span>
+function Factorial(n){
+    let product = 1;
+    for (let i = 2; i <= n; i++){
+        product = product * i; <span class=comment>// multiplies with i</span>
+    }
+    return product;
+}
+
+<span class=comment>// loops over all elements in an array, adds them up</span>
+function getSum(array){
+    let sum = 0;
+    for (let i = 0; i < array.length; i++){
+        sum += array[i]; <span class=comment>// adds ith element</span>
+    }
+    return sum;
+}
+
+getFactorial(5) <span class=comment>// => 120</span>
+getSum([3,1,4,1,5]) <span class=comment>// => 14</span>
+            </pre>
+
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">If we have an array, we can actually loop directly over its elements (without having to use indices first), using a neat <b class=js>for/of</b> structure, e.g., </p>
+
+            <pre>
+function getSum(array){ <span class=comment>// alternative to above</span>
+    let sum = 0;
+    for (let element of array){
+        sum += element;
+    }
+    return sum;
+}
+            </pre>
+
+        </div>
+
+        <h2 style = "margin-bottom: 10px">Strings Take II</h2>
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+            <p style = "margin-top: 10px; margin-bottom: 20px; margin-left: 5px">As the characters within a string are indexed by integers, starting at 0 and ending one short of the string's length (<b class=js>0,1,2,...,str.length - 1</b>), we can conveniently use for loops to iterate over them, e.g., 
+            </p>
+
+            <pre>
+function printEachChar(str){
+    for (let i = 0; i < str.length; i++){
+        console.log(str[i]); <span class=comment>// ith character</span>
+    }
+}
+
+<span class=comment>// alternative, uses for/of loop over string chars</span>
+function printEachChar(str){
+    for (let char of str){
+        console.log(char);
+    }
+}
+            </pre>
+
+
+
+            <p style = "margin-top: 0px; margin-bottom: 20px; margin-left: 5px">As a note, strings in JavaScript are immutable, meaning the string data itself (i.e. the characters) can't be changed after declaration. String methods such as concatenation actually create entire new string objects, which we assign to an existing or new variable.</p>
+
+            <pre>
+let name = "percy";
+name[0] = "m"; <span class=comment>//doesn't work! still "percy" 🌊</span>
+
+<span class=comment>//can re-assign a new string to a variable though!</span>
+name = name + " jackson"; <span class=comment>//now "percy jackson"</span>
+name += "!!"; <span class=comment>//"percy jackson!!", more sass now</span>
+            </pre>
+
+
+            <p style = "margin-top: 0px; margin-bottom: 10px; margin-left: 5px">Consequently, for most string tasks in JavaScript, we have an <b>existing string</b> whose characters we usually loop over, and a <b>new string</b> variable that we build up from scratch.</p>
+
+            <p style = "margin-top: 0px; margin-bottom: 10px; margin-left: 5px">As an example, consider a function <b class=js>twins</b> which takes an input string and returns a copy of that string with each character repeated once, e.g., <span class=js>"abc"→"aabbcc", minnesota"→"mmiinnnneessoottaa"</span>.</p>
+
+            <pre>
+function twins(input){
+    let output = ""; <span class=comment>//string to build up</span>
+    for (let char of input){
+        output += char + char; <span class=comment>//repeats each char</span>
+    }
+    return output;
+}
+
+let dancingQueen = twins("abba") <span class=comment>// => "aabbbbaa"</span>
+            </pre>
+
+        </div>
+
+        <h2 style = "margin-bottom: 10px">Final Checkpoint!</h2>
+
+        <p style = "margin-left: 5px; width: 600px">Complete the function <b class=js>encryptCaesar</b> in <b class="js keybutton">assignment.js</b>, then check to make sure all Caesar tests pass in the console. As a tip, use a loop! And make use of the helper functions you've just written.</p>
+
+        <h2 style = "margin-bottom: 10px">Optional Checkpoints</h2>
+        <h3 style = "margin-top: 10px; margin-bottom: 10px">Vigenère Cipher</h3>
+        <p style = "margin-left: 5px; margin-top: 10px; width: 600px ">Complete the function <b class=js>encryptVigenere</b> in <b class="js keybutton">assignment.js</b>. Take a look at the <a href = "https://github.com/yanbenjamin/cs106s-w1/tree/main?tab=readme-ov-file#optional-extension-vigen%C3%A8re-ciphers-also-assignmentjs">README documentation here</a> to get a sense for how the Vigenere cipher works, and how it's related to the Caesar cipher you've already wrote. To test your cipher, go to the bottom of the <b class="js keybutton">assignment.js</b> file, and uncomment the line that reads as:
+
+        <pre>
+<span class=comment>// testVigenere() // -- uncomment to test Vigenere cipher (optional)</span>
+        </pre>
+
+        <p style = "margin-left: 5px; margin-top: 0px; width: 600px"> And you'll see functionality tests appear in the console when you refresh :) Tip: Leverage helper functions you wrote for previous checkpoints!</p>
+
+        <h3 style = "margin-bottom: 10px">Breaking the Caesar Code</h3>
+        <p style = "margin-left: 5px; margin-top: 0px; margin-bottom: 10px; width: 600px"> Now that we can encrypt messages, we also want to know how to decrypt or <b>decode messages</b> that have been encrypted! </p>
+
+
+        <p style = "margin-left: 5px; margin-top: 0px; margin-bottom: 10px; width: 600px">A helper function <b class=js>decryptCaesar(<em>ciphertext</em>,<em>shift</em>)</b> is already written for you, great! It decodes an encrypted message <b class=js><em>ciphertext</em></b>, but only with an already given Caesar <b class=js><em>shift</em></b> between 0 and 25, inclusive. </p>
+
+        <p style = "margin-left: 5px; margin-top: 0px; margin-bottom: 10px; width: 600px">In practice, we don't know what the shift is, but we do know it's an integer in <b class=js>0,1,2,...,25</b>. There's only 26 possibilities, which isn't a whole lot!</p>
+
+        <div style = "margin-top: 10px; width: 600px; border: 3px solid darkblue">
+        <p style = "margin-left: 5px; margin-top: 10px; margin-bottom: 10px; width: 600px">With this mind, complete the function <b class=js>breakCaesar(<em>ciphertext</em>)</b> in <b class="js keybutton">assignment.js</b>, which should loop over every possible shift value, and print out what the decrypted string would be for each one, making calls to <b class=js>decryptCaesar</b>. How you format the printing is up to you! This brute-force approach allows us to manually inspect all the possibilities, and see which one is likely correct, e.g., the one that contains valid English words.</p>
+        </div>
+
+        <p style = "margin-left: 5px; margin-top: 10px; margin-bottom: 10px; width: 600px"><b>Extra Note:</b> The approach for <b class=js>decryptCaesar</b>, as we may expect, is very similar to <b class=js>encryptCaesar</b>! But instead of shifting each letter <b class=js>shift</b> spaces forward in the alphabet, it shifts them <b class=js>shift</b> spaces backward, e.g., <span class=js>C→A,D→B,Z→X</span> for <b class=js>shift=2</b>). In fact, in the actual code, as a convenience, <b class=js>decryptCaesar</b> actually calls your <b class=js>encryptCaesar</b> function, but with a reversed shift value to reverse the original encryption!  
+
+        <h3 style = "margin-bottom: 10px">Decrypt some fun messages in Gravity Falls!</h3>
+        <p style = "margin-left: 5px; margin-top: 0px; margin-bottom: 20px; width: 600px">The animated TV series <em>Gravity Falls</em> 🌲🌲 (2012-2016) was an endearing fan-favorite on the Disney channel, known for its mischief humor, voice acting, supernatural mystery themes, and, very relevant to us, the ciphers it placed in the end credits for each episode. Most of them were Caesar or Vigènere ciphers! And sometimes, they subtly foreshadowed major events and twists—leading all the way up to the main antagonist, a ruthless  dream demon whose name, no kidding, is Bill Cipher. Scary stuff.
+        </p>
+
+        <div style = "display: flex; justify-content: space-around; width: 600px;">
+        <img src = "gravity-falls.png" style="height: 170px; border-radius: 10px">
+        <img src = "gravity-falls-2.webp" style="height: 170px; border-radius: 10px">
+        </div>
+
+        <p style = "margin-left: 5px; margin-top: 20px; margin-bottom: 10px; width: 600px">Below is a list of ciphers / cryptograms that appear in <em>Gravity Falls</em>. <b>For fun, try to crack as many ciphers as you can!</b> (I promise no spoilers). As a tip, you'll find it useful to adapt your <b class=js>encryptCaesar</b> implementation to handle strings with potentially non-alphabetic characters (spaces, punctuation). Specifically, for any alphabet characters, you'll want to shift them as normal, but for non-alphabetic characters, you'll want to leave them unchanged, e.g., 
+        <span class = js>"hello world!"→"jgnnq yqtnf!"</span>. You can still assume any letter that appears will be lowercase. Let me know if you have any questions!</p>
+
+        <table style = "width: 580px">
+            <tr style = "background-color: lavender; font-size: 16px; border: 1px solid black">
+                <td style = "width: 20%; border: 1px solid black;"><b>Episode</b></td>
+                <td style = "width: 20%; border: 1px solid black"><b>Cipher Type</b></td>
+                <td style = "border: 1px solid black"><b>Cryptogram</b></td>
+            </tr>
+            <tr style = "font-size: 16px; border: 1px solid black">
+                <td style = "width: 20%; border: 1px solid black">S1 EP1</td>
+                <td style = "width: 20%; border: 1px solid black">Caesar</td>
+                <td style = "border: 1px solid black">"vwdq lv qrw zkdw kh vhhpv"</td>
+            </tr>
+            <tr style = "font-size: 16px; border: 1px solid black">
+                <td style = "width: 20%; border: 1px solid black">S1 EP1</td>
+                <td style = "width: 20%; border: 1px solid black">Caesar</td>
+                <td style = "border: 1px solid black">"zhofrph wr judylwb idoov"</td>
+            </tr>
+            <tr style = "font-size: 16px; border: 1px solid black">
+                <td style = "width: 20%; border: 1px solid black">S1 EP3</td>
+                <td style = "width: 20%; border: 1px solid black">Caesar</td>
+                <td style = "border: 1px solid black">"kh'v vwloo lq wkh yhqwv"</td>
+            </tr>
+
+            <tr style = "font-size: 16px; border: 1px solid black">
+                <td style = "width: 20%; border: 1px solid black">S1 EP4</td>
+                <td style = "width: 20%; border: 1px solid black">Caesar</td>
+                <td style = "border: 1px solid black">"fduod, zkb zrq'w brx fdoo ph?"</td>
+            </tr>
+
+            <tr style = "font-size: 16px; border: 1px solid black">
+                <td style = "width: 20%; border: 1px solid black">S1 EP5</td>
+                <td style = "width: 20%; border: 1px solid black">Caesar</td>
+                <td style = "border: 1px solid black">"rqzdugv drvklpd!"</td>
+            </tr>
+
+            <tr style = "font-size: 16px; border: 1px solid black">
+                <td style = "width: 20%; border: 1px solid black">S1 EP16</td>
+                <td style = "width: 20%; border: 1px solid black">Caesar</td>
+                <td style = "border: 1px solid black">"sxehuwb lv wkh juhdwhvw pbvwhub ri doo dovr: jr rxwvlgh dqg pdnh iulhqgv."</td>
+            </tr>
+
+            <tr style = "font-size: 16px; border: 1px solid black">
+                <td style = "width: 20%; border: 1px solid black">S1 Finale</td>
+                <td style = "width: 20%; border: 1px solid black">Caesar</td>
+                <td style = "border: 1px solid black">"eloo lv zdwfklqj"</td>
+            </tr>
+
+            <tr style = "font-size: 16px; border: 1px solid black; background-color: lavenderblush;">
+                <td style = "width: 20%; border: 1px solid black">S2 EP2</td>
+                <td style = "width: 20%; border: 1px solid black">Vigènere</td>
+                <td style = "border: 1px solid black">"ooiy dmev vn ibwrkamw bruwll"</td>
+            </tr>
+
+            <tr style = "font-size: 16px; border: 1px solid black; background-color: lavenderblush;">
+                <td style = "width: 20%; border: 1px solid black">S2 EP7</td>
+                <td style = "width: 20%; border: 1px solid black">Vigènere</td>
+                <td style = "border: 1px solid black">""mxngveecw mw slaww sul fpzsk mw sojmrx"</td>
+            </tr>
+
+            <tr style = "font-size: 16px; border: 1px solid black; background-color: lavenderblush;">
+                <td style = "width: 20%; border: 1px solid black">S2 Finale</td>
+                <td style = "width: 20%; border: 1px solid black">Vigènere</td>
+                <td style = "border: 1px solid black">"glcoprp googwmj fxzwg"</td>
+            </tr>
+        </table>
+
+        <p style = "margin-left: 5px; margin-top: 10px; margin-bottom: 20px; width: 600px">For the Vigènere ciphers, you'll want to use the <b class=js>decryptVigenere</b><b class=js>(<em>ciphertext</em>, <em>keyword</em>)</b> function already written in <b class="js keybutton">assignment.js</b>. For each cipher, the keyword will be among this word bank: <span class=js>"cursed","erase","cipher","shifter"</span>, <span class=js>"axolotl"</span> (tip: a loop can try all of them quickly)</p>
+
+        <p style = "margin-top: 30px; margin-bottom: 30px">That's it for the JavaScript tutorial guide, and thank you for reading!!</p>
+
+
+    </body>
+</html>

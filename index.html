@@ -114,9 +114,8 @@
         <div class="md:flex md:justify-center md:mt-12 relative">
             <aside class="md:sticky md:top-0 self-start md:pt-8">
                 <nav class="flex justify-between w-full items-center md:block mb-12 md:mb-0" aria-label=navigation>
-                    <span class="flex justify-end md:w-full md:mb-12">
-                    <img class= "h-5 md:h-20" alt="Stanford logo"
-                        src="images/logo.png"> <!-- class="h-5 md:h-8"-->
+                    <span class="flex justify-end md:w-full md:mb-12"><a href = "#main-page"><img class= "h-5 md:h-20" alt="Stanford logo"
+                        src="images/logo.png"></a> <!-- class="h-5 md:h-8"-->
                     </span>
                     <div
                         class="text-right md:-mt-1">
@@ -130,14 +129,7 @@
                                     </div>
                                     <br>
                                 </li>
-                                <li>
-                                    <div class="portal font-semibold ~info text-urge-500">
-                                        <a href=#instructors />
-                                        <span>Instructors</span>
-                                        </a>
-                                    </div>
-                                    <br>
-                                </li>
+
                                 <li>
                                     <div class="portal font-semibold ~urge text-info-500">
                                         <a href=#schedule />
@@ -146,22 +138,22 @@
                                     </div>
                                     <br>
                                 </li>
+    
                                 <li>
                                     <div class="portal font-semibold ~positive text-positive-500">
-                                        <a href="syllabus.html#syllabus" />
+                                        <a href="#syllabus" />
                                         <span>Syllabus</span>
                                         </a>
                                     </div>
                                     <br>
                                 </li>
- 
                             </ul>
                         </div>
                     </div>
                 </nav>
             </aside>
             <div class="md:min-w-xl md:max-w-xl md:mx-16 md:pt-6">
-                <section>
+                <section id = "main-page">
                     <div>
                         <h3 class="inline heading font-bold md:text-4xl">
                             CS106S
@@ -171,220 +163,179 @@
                         </h3>
                     </div>
                     <div class=mt-4>
-                        <span class="chip ~neutral !normal bg-neutral-100 mb-2 mr-2">
-                            🎃 Autumn 2024
+                        <span class="chip ~neutral !normal bg-neutral-100 mb-2 mr-2" style = "background-color: lavender">
+                            🎄 Winter 2025
                         </span>
-                        <span class="chip ~neutral !normal bg-neutral-100 mb-2 mr-2">🏫 Lathrop 190</span>
-                        <span class="chip ~neutral !normal bg-neutral-100 mb-2 mr-2">🕰️ Thursday 4:30-6:20pm</span>
+                        <span class="chip ~neutral !normal bg-neutral-100 mb-2 mr-2" style = "background-color: lavender">🏫 McMurtry Art 350</span>
+                        <span class="chip ~neutral !normal bg-neutral-100 mb-2 mr-2" style = "background-color: lavender">🕰️ Tuesday 4:30-6:20pm</span>
                     </div>
                 </section>
                 <hr class="sep h-8">
                 <main>
                     <section class=content>
-                        <p>CS 106S is a survey course on the applications of fundamental computer science concepts from CS 106B to problems in the social good space (such as health, environment, cybersecurity, trust & safety). Some of the topics we will cover include satellite imagery, tumor classification with basic machine learning, sentiment analysis of tweets on refugees, and the ethical obligation of good security. We introduce JavaScript and the groundwork of web development, with no expectation of prior experience in these areas. Recommended prerequisite/corequisite: CS 106B.</p>
+                        <p>CS 106S is a survey course on the applications of fundamental computer science concepts from CS 106B to problems in the social good space (such as health, environment, cybersecurity, trust & safety). Some of the topics we will cover include satellite imagery, tumor classification with basic machine learning, sentiment analysis of tweets on refugees, and the ethical obligation of good security. We introduce JavaScript and the groundwork of web development, with no expectation of prior experience in these areas. The course ends, by tradition, with a bubble tea party on the last day. Recommended prerequisite/corequisite: CS 106B.</p>
 
                         <h2 id="news">News</h2>
-                        <div class="flex gap-5">
-                            <div class="w-12">
-                                <span class="chip ~neutral !low bg-neutral-50">11/07/24</span>
-                            </div> 
-                            <div class="flex-grow">
-                                <p style = "margin-bottom: 10px">Hi everyone! Just wanted to announce that <b>today’s CS 106S lecture (Nov 7th / Week 7) is optional attendance</b>. Please let me know if you have any questions. Take care and thank you — Ben</p> 
-                            </div>
-                        </div>
-                
-                        <div class="flex gap-5">
-                            <div class="w-12">
-                                <span class="chip ~neutral !low bg-neutral-50">09/20/24</span>
-                            </div> 
-                            <div class="flex-grow">
-                                <p style = "margin-bottom: 10px">Welcome to CS106S! Very excited for a fun quarter together 🍁. Our first class will be Thursday Sept. 26th 2024, at 4:30 PM PT in <a href="http://campus-map.stanford.edu/?srch=Lathrop+190" style = "text-decoration: none">&nbsp;<i class = "fa-solid fa-location-dot"></i> Lathrop 190</a>.</p> 
-
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2703.092692386791!2d-122.17049972150272!3d37.428879029932816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb29c2155555%3A0x7d7db72ceea1d9ef!2sLathrop%20Library!5e0!3m2!1sen!2sus!4v1726557692616!5m2!1sen!2sus" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                                <p class="mt-2" style = "margin-top: 10px"><strong>We encourage all interested students to attend the first class, whether enrolled or otherwise.</strong> Historically, we have not had to turn students away from CS 106S for enrollment reasons.</p>
-                            </div>
-                        </div>
-
-                        <h2 id="instructors">Instructors</h2>
-                        <div class="grid grid-cols-3 md:grid-cols-3 gap-6">
-                            <div class="text-center">
-                                <img src="images/ben-yan-grad-photo.png" alt="Image for Ben" class="rounded-full h-20 w-20 mx-auto">
-                                <p class="font-semibold">Ben Yan</p>
-                                <p style = "color: gray; margin-top: 0px">Lecturer</p>
-
-                            </div>
-
-                            <div class="text-center">
-                                    <img src="images/sarah-chen.jpeg" alt="Placeholder image for Sarah" class="rounded-full h-20 w-20 mx-auto">
-                                    <p class="font-semibold">Sarah Chen</p>
-                                    <p style = "color: gray; margin-top: 0px">Instructor</p>
-    
-                                </div>
-
-                            <div class="text-center">
-                                <img src="images/cody_ho.jpeg" alt="Image of Cody" class="rounded-full h-20 w-20 mx-auto">
-                                <p class="font-semibold">Cody Ho</p>
-                                <p style = "color: gray; margin-top: 0px">Instructor</p>
                     
+                        <div class="flex gap-5">
+                            <div class="w-12">
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: rgb(230, 230, 250)">01/03/25</span>
+                            </div> 
+                            <div class="flex-grow">
+                                <p style = "margin-bottom: 10px">Welcome to CS106S! Sooooo excited for a fun quarter together 🌱. Our first class will be Tuesday Jan. 7th 2024, at 4:30 PM PT in <a href="https://campus-map.stanford.edu/?srch=McMurtry" style = "text-decoration: none" target="_blank" rel="noopener noreferrer">&nbsp;<i class = "fa-solid fa-location-dot"></i><u> McMurtry Art Building 350</u></a> (on the 3rd floor of McMurtry, which is right next to the Cantor Arts Center / Rodin sculpture garden). So sorry that it's very far from like everything on campus! (don't rush or worry if you're running a bit late)</p> 
+                                
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1584.1025334641147!2d-122.17340275355609!3d37.432260100000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb2c62c20477%3A0xa5a81294aeb0d76c!2sMcMurtry%20Building!5e0!3m2!1sen!2sus!4v1735245642232!5m2!1sen!2sus" width="300px" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                <p class="mt-2" style = "margin-top: 10px"><strong>We encourage all interested students to attend the first class, whether enrolled or otherwise!</strong> Historically, we have not had to turn students away from CS 106S for enrollment reasons. Looking forward to meeting and getting to know all of you!</p>
                             </div>
-
-                            <div class="text-center">
-                                <img src="images/joey_holtzman.jpeg" alt="Image of Joey" class="rounded-full h-20 w-20 mx-auto">
-                                <p class="font-semibold">Joey Holtzman</p>
-                                <p style = "color: gray; margin-top: 0px">Instructor</p>
-
-                            </div>
-
-                            <div class="text-center">
-                                <img src="images/aditya_saligrama.jpeg" alt="Image of Aditya" class="rounded-full h-20 w-20 mx-auto">
-                                <p class="font-semibold">Aditya Saligrama</p>
-                                <p style = "color: gray; margin-top: 0px">Instructor</p>
-
-                            </div>
-
-                            <div class="text-center">
-                                <img src="images/jerry_cain.png" alt="Image of Jerry" class="rounded-full h-20 w-20 mx-auto">
-                                <p class="font-semibold">Prof. Jerry Cain</p>
-                                <p style = "color: gray; margin-top: 0px">Faculty Sponsor</p>
-                            </div>
-
                         </div>
-                        <p>Please feel free to reach out at <a style = "text-decoration: none" href= "mailto: bbyan@stanford.edu"><strong>bbyan [at] stanford [dot] edu</strong></a> with any course questions!</p>
-       
+
                      <h2 id="schedule">Schedule</h2>
+                        
+                        <!-- Week 1 -->
                         <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
                             <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 1</span>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 1</span>
                             </div>
                             <div class="col-span-3 md:col-span-6">
-                                <p><strong>Introduction, Ciphers, and JavaScript</strong> &mdash; 09/26</p>
-                                <p>
-                                   <a href="slides/cs106s_aut24_week1.pdf" class="chip ~urge m-2 ml-0">Slides</a>
-                                    <a href="https://github.com/yanbenjamin/cs106s-w1" class="chip ~info m-2 ml-0">Starter Code</a>
-                                    <a href="syllabus.html#syllabus" class="chip ~positive m-2 ml-0">Syllabus</a>
-                                    <a href="https://tinyurl.com/cs106s-aut24-w1-checkoff" class="chip ~critical m-2 ml-0">Checkoff Form</a>
-                                   <a href="https://github.com/yanbenjamin/cs106s-w1/blob/solutions/assignment.js" class="chip ~positive m-2 ml-0">Solution</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
-                            <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 2</span>
-                            </div>
-                            <div class="col-span-3 md:col-span-6">
-                                <p><strong>Sentiment Analysis and Refugee Tweets</strong> &mdash; 10/03</p>
-                                <p>
-                                    <a href="slides/cs106s_aut24_week2.pdf" class="chip ~urge m-2 ml-0">Slides</a>
-                                     <a href="https://github.com/yanbenjamin/cs106s-sentiment" class="chip ~info m-2 ml-0">Starter Code</a>
-                                     <a href="https://forms.gle/ZLd1DmdB5dFrRqYv5" class="chip ~critical m-2 ml-0">Checkoff Form</a>
-                                    <a href="https://github.com/yanbenjamin/cs106s-sentiment/blob/solution/sentiment-analysis.js" class="chip ~positive m-2 ml-0">Solution</a> 
-                                 </p>
-
-            
-                            </div>
-                        </div>
-                        <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
-                            <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 3</span>
-                            </div>
-                            <div class="col-span-3 md:col-span-6">
-                                <p><strong>CS for Climate Change</strong> &mdash; 10/10</p>
-                                <p>
-                                    <a href="slides/cs106s_aut24_week3.pdf" class="chip ~urge m-2 ml-0">Slides</a>
-                                     <a href="https://github.com/yanbenjamin/CS106S-climatechange" class="chip ~info m-2 ml-0">Code</a>
-                                     <a href="https://forms.gle/qTrKufshRGqbZh9w9" class="chip ~critical m-2 ml-0">Checkoff Form</a>
-                                 </p>
+                                <p><strong>Introduction, Ciphers, and JavaScript</strong> &mdash; Jan 7</p>
 
                             </div>
                         </div>
+
+                        <!-- Week 2 -->
                         <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
                             <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 4</span>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 2</span>
                             </div>
                             <div class="col-span-3 md:col-span-6">
-                                <p><strong>Cancer Detection with KNN</strong> &mdash; 10/17, Sarah</p>
-                                <p>
-                                    <a href="slides/cs106s_aut24_week4.pdf" class="chip ~urge m-2 ml-0">Slides</a>
-                                     <a href="http://bit.ly/knn-starter" class="chip ~info m-2 ml-0">Code</a>
-                                     <a href="https://forms.gle/3rj45B2z7ESnRtRJ9" class="chip ~critical m-2 ml-0">Checkoff Form</a>
-                                     <a href="slides/cancer-classify-no-d3.js" class="chip ~positive m-2 ml-0">Solution</a>
-                                 </p>
+                                <p><strong>Sentiment Analysis and Refugee Tweets</strong> &mdash; Jan 14</p>
+
                             </div>
                         </div>
+
+                        <!-- Week 3 --> 
                         <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
                             <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 5</span>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 3</span>
                             </div>
                             <div class="col-span-3 md:col-span-6">
-                                <p><strong>Cybersecurity and Ethical Hacking</strong> &mdash; 10/24, Joey and Cody</p>
-                                <p>
-                                    <a href="https://saligrama.io/files/talks/20240521-web-hacking-for-social-good.pdf" class="chip ~urge m-2 ml-0">Slides</a>
-                                     <a href="https://catshare.saligrama.io/" class="chip ~info m-2 ml-0">Code</a>
-                                     <a href="https://forms.gle/KnEamF5HApVhMmiw9" class="chip ~critical m-2 ml-0">Checkoff Form</a>
-                                 </p>
+                                <p><strong>CS for Climate Change</strong> &mdash; Jan 21</p>
+
+
                             </div>
                         </div>
+
+                        <!-- Week 4 --> 
                         <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
                             <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 6</span>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 4</span>
                             </div>
                             <div class="col-span-3 md:col-span-6">
-                                <p><strong>Open Source & Web Software</strong> &mdash; 10/31</p>   
-                                <p>
-                                    <a href="slides/cs106s_aut24_week6.pdf" class="chip ~urge m-2 ml-0">Slides</a>
-                                     <a href="https://github.com/yanbenjamin/cs106s-website" class="chip ~info m-2 ml-0">Code</a>
-                                     <a href="https://forms.gle/B1KhQjqs7sqWyeHt6" class="chip ~critical m-2 ml-0">Checkoff Form</a>
-                                 </p>
+                                <p><strong>Cancer Detection with KNN</strong> &mdash; Jan 28</p>
+
+                            </div>
+                        </div>
+
+                        <!-- Week 5 --> 
+                        <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
+                            <div>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 5</span>
+                            </div>
+                            <div class="col-span-3 md:col-span-6">
+                                <p><strong>Cybersecurity and Ethical Hacking</strong> &mdash; Feb 4</p>
+ 
+                            </div>
+                        </div>
+
+                        <!-- Week 6 --> 
+                        <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
+                            <div>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 6</span>
+                            </div>
+                            <div class="col-span-3 md:col-span-6">
+                                <p><strong>Open Source & Web Software</strong> &mdash; Feb 11</p>   
        
                             </div>
                         </div>
+
+                        <!-- Week 7 --> 
                         <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
                             <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 7</span>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 7</span>
                             </div>
                             <div class="col-span-3 md:col-span-6">
-                                <p><strong>Trust and Safety (Optional Class)</strong> &mdash; 11/07</p>
-                                <p>
-                                    <a href="slides/cs106s_aut24_week7.pdf" class="chip ~urge m-2 ml-0">Slides</a>
-                                </p>
+                                <p><strong>Trust and Safety</strong> &mdash; Feb 18</p>
+                                
                             </div>
                         </div>
+
+                        <!-- Week 8 --> 
                         <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
                             <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 8</span>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 8</span>
                             </div> 
                             <div class="col-span-3 md:col-span-6">
-                                <p><strong>Mental Health & Chatbots?</strong> &mdash; 11/14</p>
-                                <p>
-                                    <a href="slides/cs106s_aut24_week8.pdf" class="chip ~urge m-2 ml-0">Slides</a>
-                                     <a href="https://drive.google.com/file/d/1B60IGlphy5hEU3MS-6226Tr7elPDwcah/view?usp=sharing" class="chip ~info m-2 ml-0">Code</a>
-                                     <a href="https://forms.gle/CBo4fWJw9MEJZnb97" class="chip ~critical m-2 ml-0">Checkoff Form</a>
-                                 </p>
-                                
+                                <p><strong>Mental Health & Chatbots?</strong> &mdash; Feb 25</p>
+                            
                             </div>
                         </div>
+
+                        <!-- Week 9 --> 
                         <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
                             <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 9</span>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 9</span>
                             </div>
                             <div class="col-span-3 md:col-span-6">
-                                <p><strong> What's Next? Beyond CS106S, End-Term Boba Party 🧋</strong> &mdash; 11/21 </p>
-                                <p>
-                                <a href="slides/cs106s_aut24_week9.pdf" class="chip ~urge m-2 ml-0">Slides</a>
-                                     <a href="https://forms.gle/stbaGuPiZr3nNsYR7" class="chip ~critical m-2 ml-0">Checkoff Form</a>
-                                 </p>
-                                
+                                <p><strong> What's Next? Beyond CS106S, End-Term Boba Party 🧋</strong> &mdash; Mar 4 </p>
+                                 
                             </div>
                         </div>
+
+                        <!-- Week 10 (no class!) --> 
                         <div class="grid grid-flow-row-dense gap-5 grid-cols-4 md:grid-cols-7">
                             <div>
-                                <span class="chip ~neutral !low bg-neutral-50">Week 10</span>
+                                <span class="chip ~neutral !low bg-neutral-50" style = "background-color: lavender">Week 10</span>
                             </div>
                             <div class="col-span-3 md:col-span-6">
                                 <p><strong>No class! Best of luck on your finals 🍀</strong></p>
                             </div>
                         </div>
+
+
+                        <h2 id="syllabus">Course Syllabus</h2>
+
+                        <p style = "margin-bottom: 5px"><b>Instructor: </b> Ben Yan </p>
+                        <p style = "margin-top: 5px; margin-bottom: 5px"><b>Email:</b> bbyan [at] stanford [dot] edu</p>
+                        <p style = "margin-top: 5px; margin-bottom: 5px"><b>Office Hours: </b> I'll be around after class, or email/Slack me and we can find a time! Happy to chat about course material, CS, Stanford life in general, anything!</p>
+
+                        <p style = "margin-top: 5px; margin-bottom: 5px"><b>Faculty Sponsor:</b> Prof. Jerry Cain</p>
+
+                        <p style = "margin-top: 5px; margin-bottom: 5px"><b>Our Wonderful Guest Lecturers:</b> TBA</p>
+       
+                        <h4>Summary</h4>
+                        <p>🌲 CS106S is a <b>1-unit, S/NC course</b> that we run in a relaxed, workshop-style classroom environment. Each week, we'll provide active lecture content in a social good ecosystem (e.g., climate change, health, cybersecurity, trust and safety), opportunites for group discussion, and hands-on activities for you to practice your programming skills and build relevant applications. We will introduce JavaScript, and the basics of web development; no prior experience in these areas is needed or expected. Though please note this is not a dedicated web programming or web applications course, unlike courses such as CS 106AX 💙, CS 147L, CS 142, or CS 193X.</p>
+                            
+                        <p>👋 The course is designed for students who are taking or who have taken CS106B—though this is not a strict requirement, and <b>anyone is welcome to attend</b>! Please feel free to talk to us on whether CS106S is the best option for you.</p>
+
+                        <p>🧭 CS106S meets on <b>Tuesdays, 4:30 - 6:20pm, in McMurtry Art Building 350.</b> Except in cases where students miss more than 1 class (which we will handle on a case by case basis, typically with a short, non-coding make-up assignment), no work will be required outside of our class meetings.</p>
+
+                        <p>📬 If you have any questions, please feel free to email me at <a href = "mailto:bbyan@stanford.edu" style = "text-decoration: bold; color: black">bbyan@stanford.edu</a>!</p>
+
+                        <h4>Requirements and Grading</h4>
+                        <p><b>Grading is based on attendance and participation</b>: to receive credit, students must attend a minimum of 8 out of the 9 weekly classes. If you have to miss more than 1 class due to  extenuating circumstances (e.g., illness, personal crisis, etc.), please contact the teaching staff to receive an excused absence. If you miss class, please email us as well! Our guiding principles are (1) we understand life can be very stressful and challenging, and so (2) <b>we will always create a path for you to pass the class.</b></p>
+
+                        <h4>Attendance</h4>
+                        <p>To check attendance, each class will have a brief check-off form. It contains some quick questions from class and feedback prompts. We expect it to take no more than 5 minutes, and we allot time at the end of class to complete it—though for flexibility, the form will kept open until 11:59 PM PT the class day.</p>
+                    
+                        <h4>Stanford Policies</h4>
+                        <p>All students are expected to abide by Stanford's Honor Code.</p>
+
+                        <h4>Accommodations</h4>
+                        <p>Students who may need an academic accommodation based on the impact of a disability must initiate the request with the <a href = "https://oae.stanford.edu">Office of Accessible Education</a> (OAE). Professional staff will evaluate the request with required documentation, recommend reasonable accommodations, and prepare an Accommodation Letter for faculty dated in the current quarter in which the request is being made. Students should contact the OAE as soon as possible since timely notice is needed to coordinate accommodations. The OAE is located at 563 Salvatierra Walk (phone: 650-723-1066)</p>
+
+                        <h4>Looking Forward to an Amazing Quarter</h4>
+                        <p style = "margin-bottom: 0px">Teaching this 1-unit wonder has been a truly wonderful privilege and joy for me, <s>because of all the free boba over the years</s>. Thank you for being here to learn with us, and I hope this will be very fun for you! 🌱🌱🌱</p>
 
                     </section>
                 </main>
@@ -392,7 +343,7 @@
                 <footer>
                     <footer class="family-secondary support content">
                         <p class=pb-2 style = "font-size:12px">
-                            © Stanford 2024. Created by Ben Yan and <a href = "https://cs4good.com/">CS + Social Good</a>. Template by Miles McCain.
+                            © Stanford 2025. Created by Ben Yan and <a href = "https://cs4good.com/">CS + Social Good</a>. Template by Miles McCain.
                         </p>
                     </footer>
                 </footer>
@@ -401,4 +352,6 @@
     </section>
 </body>
 
+
 </html>
+
