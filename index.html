@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang=en>
- 
-<head>
+
     <title>CS106S: Coding for Social Good</title>
     <meta charset=utf-8>
     <meta http-equiv=x-ua-compatible content="IE=edge">
@@ -84,6 +83,70 @@
                 </section>
                 <hr class="sep h-8">
                 <main>
+                    <section>   
+                        <head>
+                            <title>Click for More Boba!</title>
+                            <style>
+                            body {
+                              font-family: sans-serif;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              min-height: 100vh;
+                              background-color: #f0f0f0;
+                              margin: 0;
+                            }
+                            
+                            .game-container {
+                              text-align: center;
+                              background-color: #fff;
+                              padding: 20px;
+                              border-radius: 8px;
+                              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                            }
+                            
+                            #clickButton {
+                              padding: 10px 20px;
+                              font-size: 16px;
+                              cursor: pointer;
+                              background-color: #4CAF50;
+                              color: white;
+                              border: none;
+                              border-radius: 4px;
+                            }
+                            
+                            #score {
+                              font-size: 20px;
+                              margin-top: 10px;
+                            }
+                            </style>
+                            </head>
+                            <body>
+                              <div class="game-container">
+                                <h1>Click for More Boba at End of Day</h1>
+                                <button id="clickButton">Click Me!</button>
+                                <p id="score">Boba: 0</p>
+                              </div>
+                            
+                              <script>
+                                let score = 0;
+                                const clickButton = document.getElementById('clickButton');
+                                const scoreDisplay = document.getElementById('score');
+                            
+                                clickButton.addEventListener('click', function() {
+                                  score++;
+                                  scoreDisplay.textContent = `Boba: ${score}`;
+
+                                  if (score === 5) {
+                                    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Replace with your desired URL
+                                    }
+                                });
+
+                                
+                              </script>
+                            </body>
+                            
+                    </section>
                     <section class=content>
                         <p>CS 106S is a survey course on the applications of fundamental computer science concepts from CS 106B to problems in the social good space (such as health, environment, cybersecurity, trust & safety). Some of the topics we will cover include satellite imagery, tumor classification with basic machine learning, sentiment analysis of tweets on refugees, and the ethical obligation of good security. We introduce JavaScript and the groundwork of web development, with no expectation of prior experience in these areas. The course ends, by tradition, with a bubble tea party on the last day. Recommended prerequisite/corequisite: CS 106B. Prerequisite: CS 106S</p>
 
