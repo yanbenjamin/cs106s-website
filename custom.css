@@ -1,0 +1,9 @@
+    .cinema{
+        object-fit: cover;
+        height: 120px; 
+        border-radius: 10px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+    }
+
+
