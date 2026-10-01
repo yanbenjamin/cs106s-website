@@ -43,10 +43,11 @@ let SECTION_1 = {"Title": "Intro to CS for Social Good, JavaScript, and Cryptogr
 let SECTION_2 = {"Title": "Sentiment Analysis and Refugee Tweets",
 			  "Date": new Date(2026, 10, 1),
 			  "Slides": "",
-			  "Handout": "",
-              "Starter Code": "",
-              "Check-Off Form": "",
+			  //"Handout": "",
+              "Starter Code": "https://github.com/yanbenjamin/cs106s-sentiment",
+              "Check-Off Form": "https://tinyurl.com/cs106s-aut26-w2-checkoff",
               "Resources": {
+                 "JavaScript Objects": "",
 			  }}
 
 let SECTION_3 = {"Title": "CS for Climate Change",
@@ -119,8 +120,8 @@ let SECTION_10 = {"Title": "No class, best of luck on finals!",
 };
 
 /* change this to show which sections are fully visible, and which ones are faded / semi-translucent */
-let ACTIVE_SECTIONS = [SECTION_1];
-let FUTURE_SECTIONS = [SECTION_2, SECTION_3, SECTION_4, SECTION_5, 
+let ACTIVE_SECTIONS = [SECTION_1, SECTION_2];
+let FUTURE_SECTIONS = [SECTION_3, SECTION_4, SECTION_5, 
                      SECTION_6, SECTION_7, SECTION_8, SECTION_9, SECTION_10];
 
 /* the first paragraph or welcome mat students see when they visit the page! 
